@@ -52,7 +52,10 @@ a { color: var(--for); }
 .stButton > button:focus-visible, .stFormSubmitButton > button:focus-visible {
   outline: 3px solid var(--gold); outline-offset: 2px;
 }
-[data-baseweb="input"], [data-baseweb="select"] > div, [data-baseweb="textarea"] { border-radius: 10px !important; }
+[data-baseweb="input"], [data-baseweb="select"] > div, [data-baseweb="textarea"] {
+  border-radius: 10px !important; border: 1px solid #C9D1DD !important; background: #F5F7FA !important; }
+[data-baseweb="input"]:focus-within, [data-baseweb="textarea"]:focus-within { border-color: var(--ink) !important; }
+[data-baseweb="input"] input, [data-baseweb="textarea"] textarea { background: transparent !important; }
 [data-testid="stForm"] { background: #fff; border: 1px solid var(--line); border-radius: 16px; padding: 1.4rem 1.4rem 1rem; }
 .stTabs [data-baseweb="tab-list"] { gap: 0.25rem; }
 .stTabs [data-baseweb="tab"] { font-family: var(--display); font-weight: 700; font-size: 1.02rem; }
