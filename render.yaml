@@ -1,0 +1,15 @@
+# Optional "Blueprint" for Render. You can also create the service by hand (see DEPLOY.md).
+services:
+  - type: web
+    name: ai-debate-coach-api
+    runtime: python
+    plan: free
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /health
+    envVars:
+      - key: GROQ_API_KEY
+        sync: false        # Render asks you to paste it
+      - key: DATABASE_URL
+        sync: false        # Render asks you to paste it (from Neon)
